@@ -1,0 +1,29 @@
+services:
+  backend:
+    restart: unless-stopped
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        - PB_VERSION=0.22.18
+    container_name: projectventures-backend
+    ports:
+      - "42069:8080"
+    healthcheck:
+      test:
+        wget --no-verbose --tries=1 --spider http://localhost:8080/api/health ||
+        exit 1
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - "./backend/pb_data:/pb/pb_data"
+    environment:
+      - ENCRYPTION=mp7qwrTkOhXWs7YoPZR80YalgfXO5dnK
+    command:
+      - /pb/pocketbase
+      - serve
+      - --http=0.0.0.0:8080
+      - --encryptionEnv
+      - ENCRYPTION

@@ -1,0 +1,10 @@
+**/pb_data
+
+**/.env
+**/env
+**/*.pem
+**/*.cert
+**/*.cer
+**/*.key
+
+!**/*.dev.key

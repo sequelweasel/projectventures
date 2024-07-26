@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import LoginButton from "../components/LoginButton.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="border-r-8"></div>
+  <h1 class="text-lg text-red-500">hello</h1>
+  <h2 class="text-center text-5xl bg-red-900">hallo auch</h2>
+  <ul class="flex justify-center bg-white dark:bg-black">
+    <li>test1</li>
+    <li>test2</li>
+    <li>test3</li>
+  </ul>
+  <Card title="test" body="Werbung ende!" href="https://deine-mudda.de" />
+  <LoginButton />
+</Layout>
+
+<style>
+  ul {
+    & li {
+      color: red;
+    }
+  }
+</style>
