@@ -1,26 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import LoginButton from "../components/LoginButton.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <div class="border-r-8"></div>
-  <h1 class="text-lg text-red-500">hello</h1>
-  <h2 class="text-center text-5xl bg-red-900">hallo auch</h2>
-  <ul class="flex justify-center bg-white dark:bg-black">
-    <li>test1</li>
-    <li>test2</li>
-    <li>test3</li>
-  </ul>
-  <Card title="test" body="Werbung ende!" href="https://deine-mudda.de" />
-  <LoginButton />
+<Layout title="ProjectVentures">
+  <h1>Marketing</h1>
+  <p>Sichtbar ohne Login</p>
+  <p>Ab hier nur mit Login - Offensichtlicher Login Button</p>
 </Layout>
-
-<style>
-  ul {
-    & li {
-      color: red;
-    }
-  }
-</style>
