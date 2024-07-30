@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-slate-200 dark:bg-slate-800 dark:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -16,8 +16,38 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body class="h-screen">
+    <header class="flex gap-4 m-4">
+      <div>
+        <img src="/logo.svg" alt="Logo" />
+      </div>
+      <h1 class="text-center text-xl my-auto">ProjectVentures</h1>
+    </header>
+    <div class="flex h-full">
+      <nav class="">
+        <ul>
+          <li>
+            <a href="/dashboard/project-instances/new">Neue Projektinstanz</a>
+          </li>
+          <li>
+            <a href="/dashboard/project-instances/">Meine Projektinstanzen</a>
+          </li>
+        </ul>
+        <br />
+        <ul>
+          <li><a href="/projects">Alle laufenden Projekte</a></li>
+        </ul>
+        <br />
+        <ul>
+          <li><a href="/dashboard/projects/new">Neues eigenes Projekt</a></li>
+          <li><a href="/dashboard/projects/">Meine eigenen Projekte</a></li>
+          <li><a href="/dashboard/submissions/">Meine Abgaben</a></li>
+          <li><a href="/dashboard/profile">Mein Profil</a></li>
+        </ul>
+      </nav>
+      <div class="mx-4 w-full">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
-<style is:global></style>
